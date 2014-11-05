@@ -1,0 +1,20 @@
+
+.opendiv .opendivContent{overflow:auto;}
+.opendivHeader{ height:50px; line-height:50px; background: url(../images/up_header_bg68.png) left top repeat-x; font-size:24px; color:#686868; text-align:center; cursor: move; }
+.opendivHeader .opendivClose a{ float:right; display:inline-block; width:21px; height:21px; background:url(../images/clase_btn.png) left top no-repeat transparent; cursor:pointer; margin-top:-35px; margin-right:18px;}
+.opendivHeader .opendivClose a:hover{background:url(../images/clase_btn.png) left top no-repeat transparent; cursor:pointer;}
+
+.opendiv {
+    border:1px solid #cfd0d0;
+    background-color:#fff;
+}
+
+.loadImage{
+    width:32px;
+    height:32px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    z-index:10002;
+}

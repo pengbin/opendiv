@@ -1,0 +1,320 @@
+.opendivHeader{
+  height:25px;
+  cursor:move;
+  background:#fff;
+  background:url("../images/opendivHeaderBg.png") repeat-x scroll 50% 50% #fff;
+  /*-moz-border-radius: 5px;*//* firefox*/
+  /*-webkit-border-radius: 5px;*//* Safari和Chrome*/
+  /*border:1px solid #AAAAAA\9;*/
+  text-indent:10px;
+  font-weight:bold;
+  font-size:12px;
+  line-height:20px;
+}
+
+.opendiv{
+    border:1px solid #fff;
+}
+
+.opendivClose a,
+.refresh a,
+.max a,
+.min a,
+.revert a{
+  float:right;
+  height: 22px;
+  width: 22px;
+  cursor:pointer;
+  margin-right:3px;
+}
+
+.opendivHeader span{
+  float:left;
+}
+
+.opendivHeader{
+	display:block;
+	overflow:auto;
+}
+
+.opendivClose a{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -122px -22px transparent;
+}
+
+.opendivClose a:hover{
+  background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -122px -51px transparent;
+}
+
+.refresh a{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -5px -22px transparent;
+}
+
+.refresh a:hover{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -5px -51px transparent;
+}
+
+.max a{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -33px -22px transparent;
+}
+
+.max a:hover{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -33px -51px transparent;
+}
+
+.min a{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -62px -22px transparent;
+}
+
+.min a:hover{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -62px -51px transparent;
+}
+
+.revert a{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -152px -22px transparent;
+}
+
+.revert a:hover{
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -152px -51px transparent;
+}
+
+.opendiv{
+  background:#FFF;
+  border:1px solid #fff;
+  filter:alpha(opacity=90);
+  opacity:.9;
+  /*-moz-border-radius: 5px;*//* firefox*/
+  /*-webkit-border-radius: 5px;*//* Safari和Chrome*/
+}
+
+.opendivContent{
+  margin:4px;
+  overflow:auto;
+  text-align: center;
+  *padding-top:4px;
+  *overflow-x: hidden;
+   background:#FFF;
+}
+
+.openChoose td,
+.openChoose th{
+    border-bottom:#99BBE8 1px solid;
+    border-right:#99BBE8 1px solid;
+    text-align: center;
+    height:20px;
+    line-height:20px;
+}
+
+.openChoose th{
+    font-weight:bold; 
+}
+
+.openChoose{
+    width:100%;
+    border-top:#99BBE8 1px solid;
+    border-left:#99BBE8 1px solid;
+    overflow:auto;
+    font-size:14px;
+    /*margin-top:5px;*/
+}
+
+.loadImage{
+    width:32px;
+    height:32px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    z-index:10002;
+}
+
+.openChoose input{
+    border:#99BBE8 1px solid; 
+}
+
+.count{
+    font-size:13px;
+    float:left;
+}
+
+.countPage{
+    border: none;  
+}
+    
+.searchSubmit{
+    
+    *line-height:23px;
+}
+
+.searchSubmit button{
+    height:30px;
+    width:60px;    
+}
+
+.openChoose span{
+    color:red;
+}
+
+.page img{
+    padding-top:3px;
+}
+
+.window_t {
+    background: url("../images/sprite_repeat_x_png.png") repeat-x scroll 0 -80px transparent;
+    height: 10px;
+    width:100%;
+    left:0px;
+    top:-10px;
+}
+
+.window_rt {
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -10px 0 transparent;
+    right: -10px;
+    top: -10px;
+    height: 10px;
+    width:10px;
+}
+
+.window_r {
+    background: url("../images/sprite_repeat_y_png.png") repeat-y scroll -10px 0 transparent;
+    height: 100%;
+    right: -10px;
+    width: 10px;
+    height: 100%;
+    top:0px;
+}
+
+.window_rb {
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll -10px -10px transparent;
+    bottom: -10px;
+    height: 10px;
+    overflow: hidden;
+    right: -10px;
+    width: 10px;
+}
+
+.window_b {
+    background: url("../images/sprite_repeat_x_png.png") repeat-x scroll 0 -90px transparent;
+    bottom: -10px;
+    height: 10px;
+    left: 0;
+    width: 100%;
+}
+
+.window_lb {
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll 0 -10px transparent;
+    bottom: -10px;
+    height: 10px;
+    left: -10px;
+    width: 10px;
+}
+
+.window_l {
+    background: url("../images/sprite_repeat_y_png.png") repeat-y scroll 0 0 transparent;
+    height: 100%;
+    left: -10px;
+    width: 10px;
+    top:0px;
+}
+
+.window_lt {
+    background: url("../images/opendivHeaderOperateBg.png") no-repeat scroll 0 0 transparent;
+    height: 10px;
+    left: -10px;
+    top: -10px;
+    width: 10px;
+}
+
+
+
+.window_bg{
+    position: absolute;
+    display:block;
+    overflow:hidden;
+}
+
+.opendiv iframe {
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+}
+
+.iframeDiv{
+    height: 100%;
+    left: 0;
+    overflow: auto;
+    position: absolute;
+    top: 25px;
+    width: 100%;
+}
+
+.toolBarDiv{
+  text-align:center;
+  float:left;  
+  background: url("../images/toolBarBg.png");
+  height:18px;
+  width:53px;
+  font-size:12px;
+  color:#FFF;
+  line-height:20px\9;
+  cursor:pointer;
+  margin-left:3px;
+}
+
+.toolBar{
+    position:absolute;
+    bottom:3px;
+    left:10px;
+}
+
+.arrow{
+    width:15px;
+    height:120px;
+    float:left;
+    margin-left:5px;
+    margin-top:40px;
+}
+
+.leftArrow,
+.leftMoreArrow,
+.rightArrow,
+.rightMoreArrow{
+    cursor:pointer;
+    margin-top:10px;
+}
+
+.leftArrow{
+    background: url("../images/arrow.png") no-repeat scroll -13px 0px transparent;
+    height:18px;
+    width:15px;
+}
+
+.leftMoreArrow{
+    background: url("../images/arrow.png") no-repeat scroll -49px 0px transparent;
+    height:18px;
+    width:18px;
+}
+
+.rightArrow{
+    background: url("../images/arrow.png") no-repeat scroll 0px 0px transparent;
+    height:18px;
+    width:15px;
+}
+
+.rightMoreArrow{
+    background: url("../images/arrow.png") no-repeat scroll -30px 0px transparent;
+    height:18px;
+    width:18px;
+}
+
+.loadImage{
+    width:32px;
+    height:32px;
+    position:absolute;
+    top:50%;
+    left: 50%;
+    margin: -16px 0 0 -16px;
+    z-index:10002;
+}

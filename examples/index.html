@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-Type" content="text/html;charset=utf-8" />
+<script src="jquery-1.11.0.min.js"></script>
+<script src="../src/opendiv.js"></script>
+<title> examples </title>
+</head>
+<script>
+function openHtml(){
+	var panel = new opendiv();
+	panel.init({
+		"title":"This is html",
+		"id":"openHtml",
+		"action":"html",
+		"html":"This is html",
+		"width":300,
+		"height":200,
+		"callback":function(){
+			alert("This is html");
+		}
+	})
+}
+
+function openUrl(){
+	var panel = new opendiv();
+	panel.init({
+		"title":"This is url",
+		"id":"openUrl",
+		"action":"url",
+		"html":"/index.html",
+		"width":300,
+		"height":200,
+		"callback":function(){
+			alert("This is url");
+		}
+	})
+}
+
+function openIframe(){
+	var panel = new opendiv();
+	panel.init({
+		"title":"This is iframe",
+		"id":"openIframe",
+		"action":"iframe",
+		"html":"http://www.google.cn/",
+		"width":300,
+		"height":200,
+		"callback":function(){
+			alert("This is iframe");
+			panel.max();
+		}
+	})
+}
+</script>
+<body>
+<input type="button" value="&#24377;&#20986;html" onclick="openHtml()">
+<input type="button" value="&#24377;&#20986;url" onclick="openUrl()">
+<input type="button" value="&#24377;&#20986;iframe" onclick="openIframe()">
+</body>
+</html>

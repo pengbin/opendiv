@@ -47,7 +47,12 @@ function opendiv(){
 	this.path;
 	this.async;
 	this.style = 1;
+	this.browser;
+	
+	this.clientHeight;
+	this.clientWidth;
 	this.init = function(parameter){
+		_this.browser_version();
 		this.callback = parameter['callback'];
 		
 		typeof parameter['id'] == "undefined" ? this.id = Math.floor(Math.random()*100000+1) : this.id = parameter['id'];
@@ -64,7 +69,7 @@ function opendiv(){
 			_this.close_callback = parameter['close_callback'];
 		}
 		if(typeof parameter['async'] == "undefined"){
-			if(browser == "ff"){
+			if(_this.browser == "ff"){
 				_this.async = false;
 		    }else{
 		    	_this.async = true;
@@ -80,8 +85,9 @@ function opendiv(){
 		
 		_this.get_js_path();
 		_this.add_css();
-		this.browser_version();
-		this.create();
+		_this.clientWidthAndHeight();
+		_this.browser_version();
+		_this.create();
 	}
 	
 	this.create = function(){
@@ -259,7 +265,7 @@ function opendiv(){
 		    	
 		    }
 		    
-			if(browser == "ff"){
+			if(_this.browser == "ff"){
 				var cover_height = document.body.clientHeight+document.body.scrollTop+"px";
 			}else{
 				var cover_height = document.documentElement.clientHeight+document.body.scrollTop+"px";
@@ -289,8 +295,7 @@ function opendiv(){
 	}
 	
 	this.ie8 = function(){
-		this.browser_version();
-	    if(browser == "ie8"){
+	    if(_this.browser == "ie8"){
 	    	jQuery(".opendivClose").mouseover(function(){
 	    		jQuery(this).find("a").css({
 	    			background:"url('"+_this.path+"/images/opendivHeaderOperateBg.png') no-repeat -122px -51px"
@@ -357,10 +362,10 @@ function opendiv(){
 	        left:"8px"
 		})
 		jQuery("#"+_this.id).find(".opendivContent").css({
-			height:clientHeightFF-70+"px"
+			height:_this.clientHeight-70+"px"
 		})
 		jQuery("#"+_this.id).find(".iframeDiv").css({
-		    height:clientHeightFF-20+"px"
+		    height:_this.clientHeight-20+"px"
 		})
 	}
 	
@@ -451,42 +456,67 @@ function opendiv(){
 	}
 	
 	this.browser_version = function(){
-		if(typeof browser == "undefined"){
+		if(typeof _this.browser == "undefined"){
+			if(typeof jQuery.browser == "undefined"){
+				jQuery.browser = new Object();
+				jQuery.browser.mozilla = /firefox/.test(navigator.userAgent.toLowerCase());
+				jQuery.browser.webkit = /webkit/.test(navigator.userAgent.toLowerCase());
+				jQuery.browser.opera = /opera/.test(navigator.userAgent.toLowerCase());
+				jQuery.browser.msie = /msie/.test(navigator.userAgent.toLowerCase());
+				jQuery.browser.safari = /safari/.test(navigator.userAgent.toLowerCase());
+				if(jQuery.browser.msie){
+					if(typeof(document.body.style.maxHeight) == "undefined"){
+						jQuery.browser.version = 6;
+					}else if (!jQuery.support.leadingWhitespace){
+						jQuery.browser.version = 8;
+					}
+				}
+			}
 			if(jQuery.browser.msie && jQuery.browser.version ==6){
-				browser = "ie6";
+				_this.browser = "ie6";
 			}
 			
 			if(jQuery.browser.msie && jQuery.browser.version ==7){
-				browser = "ie7";
+				_this.browser = "ie7";
 			}
 			
 			if(jQuery.browser.msie && jQuery.browser.version ==8){
-				browser = "ie8";
+				_this.browser = "ie8";
 			}
 			
 			if(jQuery.browser.msie && jQuery.browser.version ==9){
-				browser = "ie9";
+				_this.browser = "ie9";
 			}
 			
 			if(jQuery.browser.msie && jQuery.browser.version ==10){
-				browser = "ie10";
+				_this.browser = "ie10";
 			}
 			
 			if(jQuery.browser.msie && jQuery.browser.version ==11){
-				browser = "ie11";
+				_this.browser = "ie11";
 			}
 			
 			if(jQuery.browser.mozilla){
-				browser = "ff";
+				_this.browser = "ff";
 			}
 			
 			if(jQuery.browser.safari){
 			  if(window.navigator.userAgent.indexOf("Chrome") != -1)
-			    browser = "chrome";
+				  _this.browser = "chrome";
 			  else
-			    browser = "safari";
+				  _this.browser = "safari";
 			}
 		}
-		return browser;
+	}
+	
+	this.clientWidthAndHeight = function(){
+		if(typeof _this.clientHeight == "undefined"){
+			if(_this.browser == "ff"){
+				_this.clientHeight = document.body.clientHeight+document.body.scrollTop+"px";
+			}else{
+				_this.clientHeight = document.documentElement.clientHeight+document.body.scrollTop+"px";
+			}
+			_this.clientWidth = document.documentElement.clientWidth;
+		}
 	}
 }

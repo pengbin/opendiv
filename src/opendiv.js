@@ -148,7 +148,7 @@ function opendiv(){
 				}
 			  })
 		  }else if(_this.action == "iframe"){
-	    	var div = windowOperate+"<div class='opendivContent' id='opendivContent"+_this.id+"'><div class='iframeDiv'><iframe scrolling='auto' frameborder='no' hidefocus='' allowtransparency='true' src='"+_this.html+"' class='iframeApp' name='iframeApp_4' id='iframeApp_"+_this.id+"'></iframe></div></div>";
+	    	var div = windowOperate+"<div class='opendivContent' name='opendivContent"+_this.id+"' id='opendivContent"+_this.id+"'><div class='iframeDiv'><iframe scrolling='auto' frameborder='no' hidefocus='' allowtransparency='true' src='"+_this.html+"' class='iframeApp' name='iframeApp_4' id='iframeApp_"+_this.id+"'></iframe></div></div>";
 	    	
 	    	div += windowBg;
 	    	jQuery("body").append(div);
@@ -215,23 +215,13 @@ function opendiv(){
 		    }else{
 		    	jQuery(".cover").show();
 		    }
-		}else{
-			/*if(browser == "ff" || browser == "chrome"){
-				alert($(document).scrollLeft());
-				alert($(window).height()); //浏览器当前窗口可视区域高度
-				alert(document.body.clientHeight);
-				var id_top = (document.body.clientHeight/2-_this.height/2)+document.body.scrollTop+"px";
-				alert(id_top);
+		}else{			
+			if(jQuery(window).height() < 200){
+				var h = jQuery(document).height();
 			}else{
-				var scroll = 0;
-				if(document.body.scrollTop == 0)
-					scroll = document.documentElement.scrollTop;
-				else
-					scroll = document.body.scrollTop;
-				var id_top = (document.documentElement.clientHeight/2-_this.height/2)+scroll+"px";
-			}*/
-			
-			var id_top = (jQuery(window).height()/2-_this.height/2)+jQuery(document).scrollTop()-30; //加30表示稍微居上一点更好看
+				var h = jQuery(window).height();
+			}
+			var id_top = (h/2-_this.height/2)+jQuery(document).scrollTop()-30; //加30表示稍微居上一点更好看
 			if(id_top < 0) //据顶不能为负，不然关闭按钮都看不见了
 				id_top = 0;
 			id_top += "px";
@@ -397,6 +387,9 @@ function opendiv(){
 			if(jQuery(".opendiv",parent.document).size() == 0)
 				jQuery(".cover",parent.document).remove();
 		}else{
+			if(jQuery("#iframeApp_"+_this.id).size() > 0){
+				jQuery("#iframeApp_"+_this.id).remove()
+			}
 			jQuery("#"+_this.id).remove();
 			if(jQuery(".opendiv").size() == 0)
 				jQuery(".cover").remove();
